@@ -36,8 +36,15 @@ class Profile extends Component {
       <div className="main-container">
 
         {/* Note how we pass the setQuery function to enable Query to perform searches */}
-        <New_Run />
-        <Progress />
+        <div className="row">
+          <div className="col-lg-7">
+            <New_Run />
+          </div>
+          <div className="col-lg-1"></div>
+            <div className="col-lg-4">
+               <Progress />
+            </div>
+        </div>
         <Table runs={this.state.runs} />
       </div>
     );

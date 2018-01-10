@@ -5,20 +5,21 @@ import React, { Component } from 'react'
 class New_Run extends Component {
   // Here we set initial variables for the component to be blanks
   state = { 
+    title:"",
     date: "",
     mileage: "",
     time: ""
   }
 
-  // // Whenever we detect ANY change in the textbox, we register it.
-  // handleChange = (event) => {
-  //   // Here we create syntax to capture any change in text to the query terms (pre-search).
-  //   // See this Stack Overflow answer for more details:
-  //   // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
-  //   var newState = {};
-  //   newState[event.target.id] = event.target.value;
-  //   this.setState(newState);
-  // }
+  // Whenever we detect ANY change in the textbox, we register it.
+  handleChange = (event) => {
+    // Here we create syntax to capture any change in text to the query terms (pre-search).
+    // See this Stack Overflow answer for more details:
+    // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
+    var newState = {};
+    newState[event.target.id] = event.target.value;
+    this.setState(newState);
+  }
 
   // // This code handles the sending of the search terms to the parent Search component
   // handleSubmit = (event) => {
@@ -30,11 +31,6 @@ class New_Run extends Component {
   render() {
 
     return (
-      <div className="main-container">
-
-        <div className="row">
-          <div className="col-lg-8">
-
             <div className="panel panel-primary">
               <div className="panel-heading">
                 <h1 className="panel-title">
@@ -48,9 +44,22 @@ class New_Run extends Component {
                 {/* Note how we associate the text-box inputs with the state values */}
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
+                    
+                    <h4 className=""><strong>Title</strong></h4>
+                    <input
+                      type="text"
+                      placeholder="Your route"
+                      value={this.state.title}
+                      className="form-control"
+                      id="title"
+                      onChange={this.handleChange}
+                      required
+                    />
+
                     <h4 className=""><strong>Date</strong></h4>
                     <input
                       type="text"
+                      placeholder="mm/dd/yyyy"
                       value={this.state.date}
                       className="form-control"
                       id="date"
@@ -61,6 +70,7 @@ class New_Run extends Component {
                     <h4><strong>Mileage</strong></h4>
                     <input
                       type="number"
+                      placeholder="How many miles did you run?"
                       value={this.state.mileage}
                       className="form-control"
                       id="mileage"
@@ -72,6 +82,7 @@ class New_Run extends Component {
 
                     <input
                       type="number"
+                      placeholder="hh:mm:ss"
                       value={this.state.time}
                       className="form-control"
                       id="time"
@@ -95,9 +106,7 @@ class New_Run extends Component {
               </div>
             </div>
 
-          </div>
-        </div>
-      </div>
+     
     );
   }
 };

@@ -8,9 +8,11 @@ import helpers from "../../utils/helpers";
 class Table extends Component {
   // Here we will save states for the contents we save
   state = {
-    title: "",
-    url: "",
-    pubdate: ""
+    Title: "Black Hammock Trailhead",
+    Date: "January 8 2018",
+    Mileage: "5",
+    Time: "00:40:00",
+    Pace: ""
   }
 
   // This code handles the sending of the search terms to the parent Search component
@@ -67,8 +69,7 @@ class Table extends Component {
               <div className="panel-heading">
                 <h1 className="panel-title">
                   <strong>
-                    <i className="fa fa-list-alt"></i>
-                    Results
+                    YOUR RUNS
                   </strong>
                 </h1>
               </div>
@@ -84,18 +85,18 @@ class Table extends Component {
     );
   }
   render() {
-    // If we have no articles, render this HTML
-     if (this.props.runs.length===0) {
-      return (
-        <li className="list-group-item">
-          <h3>
-            <span>
-              <em>NO RUNS TO SHOW</em>
-            </span>
-          </h3>
-        </li>
-      );
-    }
+    // // If we have no articles, render this HTML
+    //  if (this.props.runs.length===0) {
+    //   return (
+    //     <li className="list-group-item">
+    //       <h3>
+    //         <span>
+    //           <em>NO RUNS TO SHOW</em>
+    //         </span>
+    //       </h3>
+    //     </li>
+    //   );
+    // }
     // If we have articles, return this.renderContainer() which in turn, returns all the articles
     return this.renderContainer();
   }
