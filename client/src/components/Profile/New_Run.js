@@ -58,7 +58,7 @@ class New_Run extends Component {
 
                     <h4 className=""><strong>Date</strong></h4>
                     <input
-                      type="text"
+                      type="date"
                       placeholder="mm/dd/yyyy"
                       value={this.state.date}
                       className="form-control"
