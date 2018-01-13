@@ -5,9 +5,10 @@ import React, { Component } from 'react'
 class NewRun extends Component {
   // Here we set initial variables for the component to be blanks
   state = { 
+
     title: "",
     date: "",
-    mileage: "",
+    milage: "",
     totalRunTime: ""
   }
 
@@ -35,6 +36,7 @@ handleSubmit = (event) => {
         <div className="row">
           <div className="col-lg-8">
 
+
             <div className="panel panel-primary">
               <div className="panel-heading">
                 <h1 className="panel-title">
@@ -48,29 +50,34 @@ handleSubmit = (event) => {
                 {/* Note how we associate the text-box inputs with the state values */}
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
+
+                    
                     <h4 className=""><strong>Title</strong></h4>
-                      <input
-                        type="text"
-                        value={this.state.title}
-                        className="form-control"
-                        id="title"
-                        onChange={this.handleChange}
-                        required
-                    />  
-                  
+                    <input
+                      type="text"
+                      placeholder="Your route"
+                      value={this.state.title}
+                      className="form-control"
+                      id="title"
+                      onChange={this.handleChange}
+                      required
+                    />
+
                     <h4 className=""><strong>Date</strong></h4>
-                      <input
-                        type="date"
-                        value={this.state.date}
-                        className="form-control"
-                        id="date"
-                        onChange={this.handleChange}
-                        required
+                    <input
+                      type="date"
+                      placeholder="mm/dd/yyyy"
+                      value={this.state.date}
+                      className="form-control"
+                      id="date"
+                      onChange={this.handleChange}
+                      required
                     />
 
                     <h4><strong>Milage</strong></h4>
                     <input
                       type="number"
+                      placeholder="How many miles did you run?"
                       value={this.state.milage}
                       className="form-control"
                       id="milage"
@@ -83,8 +90,10 @@ handleSubmit = (event) => {
                     <input
                       type="number"
                       value={this.state.totalRunTime}
+                      placeholder="hh:mm:ss"
                       className="form-control"
                       id="totalRunTime"
+
                       onChange={this.handleChange}
                       required
                     />
@@ -104,10 +113,10 @@ handleSubmit = (event) => {
 
               </div>
             </div>
-
           </div>
         </div>
       </div>
+
     );
   }
 };

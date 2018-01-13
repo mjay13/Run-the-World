@@ -35,6 +35,7 @@ class Main extends Component {
                 <ul className="nav navbar-nav navbar-right">
                   {/* Using <Link> in place of <a> and "to" in place of "href" */}
                   <li><Link to="/Profile">Profile</Link></li>
+
                 </ul>
               </div>
             </div>

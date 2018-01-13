@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 
 // Include the components
+
 import NewRun from "./Profile/NewRun";
 import Progress from "./Profile/Progress";
 import Table from "./Profile/Table";
@@ -53,10 +54,18 @@ class Profile extends Component {
   render() {
     return (
       <div className="main-container">
-
-        <NewRun updateRun={this.updateRun}/>
-        <Progress />
+        {/* Note how we pass the setQuery function to enable Query to perform searches */}
+        <div className="row">
+          <div className="col-lg-7">
+            <NewRun updateRun={this.updateRun}/>
+          </div>
+          <div className="col-lg-1"></div>
+            <div className="col-lg-4">
+               <Progress />
+            </div>
+        </div>
         <Table savedRuns={this.state.savedRuns} deleteRun={this.deleteRun} />
+
       </div>
     );
   }

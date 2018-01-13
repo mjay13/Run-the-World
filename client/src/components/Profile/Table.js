@@ -1,13 +1,14 @@
 // Include React as a dependency
-import React, { Component } from 'react'
+import React from 'react';
 
 // Include our helpers for API calls
 import helpers from "../../utils/helpers";
 
 // Results Component Declaration
-class Table extends Component {
 
-  // This code handles the deleting saved runs from our database
+function Table(props) {
+  
+  // This code handles the sending of the search terms to the parent Search component
   handleClick = (item) => {
    this.props.deleteRun(item);
   }
@@ -54,8 +55,7 @@ class Table extends Component {
               <div className="panel-heading">
                 <h1 className="panel-title">
                   <strong>
-                    <i className="fa fa-list-alt"></i>
-                    Results
+                    YOUR RUNS
                   </strong>
                 </h1>
               </div>
@@ -84,6 +84,7 @@ class Table extends Component {
       );
     }
     // If we have runs, return this.renderContainer() which in turn, returns all the runs
+
     return this.renderContainer();
   }
 };
