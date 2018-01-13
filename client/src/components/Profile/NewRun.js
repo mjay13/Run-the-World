@@ -5,7 +5,6 @@ import React, { Component } from 'react'
 class NewRun extends Component {
   // Here we set initial variables for the component to be blanks
   state = { 
-
     title: "",
     date: "",
     milage: "",

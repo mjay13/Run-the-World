@@ -1,21 +1,14 @@
 // Include React as a dependency
-import React from 'react';
+import React, { Component } from 'react';
 
-// Include our helpers for API calls
-import helpers from "../../utils/helpers";
+// Table Component Declaration
 
-// Results Component Declaration
+class Table extends Component {
 
-function Table(props) {
-  
-  // This code handles the sending of the search terms to the parent Search component
+  // This code handles the sending of deleting a run to the profile component parent
   handleClick = (item) => {
    this.props.deleteRun(item);
   }
-
-
-  // delete run
-
 
   // A helper method for mapping through our runs and outputting some HTML
   renderRuns = () => {
@@ -70,6 +63,8 @@ function Table(props) {
       </div>
     );
   }
+  
+  
   render() {
     // If we have no runs, render this HTML
      if (!this.props.savedRuns) {
@@ -83,10 +78,11 @@ function Table(props) {
         </li>
       );
     }
+    
     // If we have runs, return this.renderContainer() which in turn, returns all the runs
-
-    return this.renderContainer();
+    return (this.renderContainer());
   }
+
 };
 
 // Export the module back to the route
