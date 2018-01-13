@@ -5,32 +5,38 @@ import React, { Component } from 'react'
 class NewRun extends Component {
   // Here we set initial variables for the component to be blanks
   state = { 
-    title:"",
+
+    title: "",
     date: "",
-    mileage: "",
-    time: ""
+    milage: "",
+    totalRunTime: ""
   }
 
-  // Whenever we detect ANY change in the textbox, we register it.
-  handleChange = (event) => {
-    // Here we create syntax to capture any change in text to the query terms (pre-search).
-    // See this Stack Overflow answer for more details:
-    // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
-    var newState = {};
-    newState[event.target.id] = event.target.value;
-    this.setState(newState);
-  }
+ // Whenever we detect ANY change in the textbox, we register it.
+ handleChange = (event) => {
+  // Here we create syntax to capture any change in text to the query terms (pre-search).
+  // See this Stack Overflow answer for more details:
+  // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
+  var newState = {};
+  newState[event.target.id] = event.target.value;
+  this.setState(newState);
+}
 
-  // // This code handles the sending of the search terms to the parent Search component
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   this.props.updateSearch(this.state.search, this.state.start, this.state.end);
-  // }
+handleSubmit = (event) => {
+  event.preventDefault();
+  this.props.updateRun(this.state);
+}
 
-  // Here we render the Query component
+  // Here we render the New Run Form component
   render() {
 
     return (
+      <div className="main-container">
+
+        <div className="row">
+          <div className="col-lg-8">
+
+
             <div className="panel panel-primary">
               <div className="panel-heading">
                 <h1 className="panel-title">
@@ -44,6 +50,7 @@ class NewRun extends Component {
                 {/* Note how we associate the text-box inputs with the state values */}
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
+
                     
                     <h4 className=""><strong>Title</strong></h4>
                     <input
@@ -67,13 +74,13 @@ class NewRun extends Component {
                       required
                     />
 
-                    <h4><strong>Mileage</strong></h4>
+                    <h4><strong>Milage</strong></h4>
                     <input
                       type="number"
                       placeholder="How many miles did you run?"
-                      value={this.state.mileage}
+                      value={this.state.milage}
                       className="form-control"
-                      id="mileage"
+                      id="milage"
                       onChange={this.handleChange}
                       required
                     />
@@ -82,10 +89,11 @@ class NewRun extends Component {
 
                     <input
                       type="number"
+                      value={this.state.totalRunTime}
                       placeholder="hh:mm:ss"
-                      value={this.state.time}
                       className="form-control"
-                      id="time"
+                      id="totalRunTime"
+
                       onChange={this.handleChange}
                       required
                     />
@@ -105,8 +113,10 @@ class NewRun extends Component {
 
               </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-     
     );
   }
 };
