@@ -1,44 +1,62 @@
 // Include React as a dependency
 import React, { Component } from 'react'
 
-// Include the Query and Results components
-import New_Run from "./Profile/New_Run";
+// Include the components
+import NewRun from "./Profile/NewRun";
 import Progress from "./Profile/Progress";
 import Table from "./Profile/Table";
 
 // Include the helpers for making API calls
-import axios from "axios";
+//import axios from "axios";
+
+import helpers from "../utils/helpers";
 
 
 // Create the Profile component
 class Profile extends Component {
-  // Here we set the initial state variables
-  // (this allows us to propagate the variables for maniuplation by the children components
-  // Also note the "resuls" state. This will be where we hold the data from our results
+
   state = { 
-    runs: []
+    savedRuns: []
   }
 
-  // componentDidMount() {
+  updateRun = (formData) => {
+    helpers.postSaved(formData)
+    .then(() => {
+      console.log(formData.title+" run logged");
 
-  //   axios.get("/api/saved")
-  //     .then(function(results) {
-  //       console.log("axios results", results);
-  //       this.setState({runs : data})
-  //     });
-  // }
+    });
+  }
 
+  deleteRun = (item) => {
+  helpers.deleteSaved(item._id)
+  .then(() => {
 
+    // Get the revised log!
+    helpers.getSaved()
+    .then((runData) => {
+      this.setState({ savedRuns: runData.data });
+      console.log("Logged runs: ", runData.data);
+    });
 
-  // Render the component. Note how we deploy both the Query and the Results Components
+  });
+}
+
+  componentDidMount() {
+    helpers.getSaved()
+    .then((runData) => {
+      this.setState({ savedRuns: runData.data });
+      console.log("Saved results: ", runData.data);
+    });
+  }
+
+  // Render the component
   render() {
     return (
       <div className="main-container">
 
-        {/* Note how we pass the setQuery function to enable Query to perform searches */}
-        <New_Run />
+        <NewRun updateRun={this.updateRun}/>
         <Progress />
-        <Table runs={this.state.runs} />
+        <Table savedRuns={this.state.savedRuns} deleteRun={this.deleteRun} />
       </div>
     );
   }

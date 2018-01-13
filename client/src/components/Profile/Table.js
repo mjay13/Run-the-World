@@ -6,47 +6,34 @@ import helpers from "../../utils/helpers";
 
 // Results Component Declaration
 class Table extends Component {
-  // Here we will save states for the contents we save
-  state = {
-    title: "",
-    url: "",
-    pubdate: ""
-  }
 
-  // This code handles the sending of the search terms to the parent Search component
+  // This code handles the deleting saved runs from our database
   handleClick = (item) => {
-    console.log("CLICKED", item);
-
-    helpers.postSaved(item.headline.main, item.pub_date, item.web_url).then(function() {
-      console.log(item.web_url);
-    });
+   this.props.deleteRun(item);
   }
 
-  // A helper method for mapping through our articles and outputting some HTML
-  renderRuns = () => {
-    return this.props.runs.map((article, index) => {
 
-      // Each article thus reperesents a list group item with a known index
+  // delete run
+
+
+  // A helper method for mapping through our runs and outputting some HTML
+  renderRuns = () => {
+    return this.props.savedRuns.map((run, index) => {
+
+      // Each run thus represents a list group item with a known index
       return (
         <div key={index}>
           <li className="list-group-item">
             <h3>
               <span>
-                <em>{article.headline.main}</em>
+                <em>{run.title}</em>
               </span>
-              <span className="btn-group pull-right">
-                <a href={article.web_url} rel="noopener noreferrer" target="_blank">
-                  <button className="btn btn-default ">View Article</button>
-                </a>
-
-                {/*
-                  By using an arrow function callback to wrap this.handleClick,
-                  we can pass in an article as an argument
-                */}
-                <button className="btn btn-primary" onClick={() => { this.handleClick(article)}}>Save</button>
-              </span>
+              <p>Milage: {run.milage}</p>
+              <p>Time: {run.totalRunTime}</p>
+              <p>Date: {run.date}</p>
+                <button className="btn btn-primary" onClick={() => { this.handleClick(run)}}>Delete</button>
+              
             </h3>
-            <p>Date Published: {article.pub_date}</p>
 
           </li>
 
@@ -57,7 +44,7 @@ class Table extends Component {
 
   }
 
-  // A helper method for rendering a container to hold all of our articles
+  // A helper method for rendering a container to hold all of our runs
   renderContainer = () => {
     return (
       <div className="main-container">
@@ -84,8 +71,8 @@ class Table extends Component {
     );
   }
   render() {
-    // If we have no articles, render this HTML
-     if (this.props.runs.length===0) {
+    // If we have no runs, render this HTML
+     if (!this.props.savedRuns) {
       return (
         <li className="list-group-item">
           <h3>
@@ -96,7 +83,7 @@ class Table extends Component {
         </li>
       );
     }
-    // If we have articles, return this.renderContainer() which in turn, returns all the articles
+    // If we have runs, return this.renderContainer() which in turn, returns all the runs
     return this.renderContainer();
   }
 };

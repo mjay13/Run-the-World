@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 
 // Require Schemas
-var Article = require("./model");
+var Run = require("./runModel");
 
 // Create Instance of Express
 var app = express();
@@ -28,8 +28,8 @@ app.use((req, res, next) => {
 // Serve files created by create-react-app.
 app.use(express.static("client/build"));
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytreact";
+// If deployed, use the deployed database. Otherwise use the local Run-the-World database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/Run-the-World";
 
 mongoose.connect(MONGODB_URI);
 
@@ -44,9 +44,9 @@ db.once("open", function() {
 });
 
 // -------------------------------------------------
-// Route to get all saved articles
+// Route to get all saved runs
 app.get("/api/saved", function(req, res) {
-  Article.find({})
+  Run.find({})
     .exec(function(err, doc) {
       if (err) {
         console.log(err);
@@ -57,11 +57,11 @@ app.get("/api/saved", function(req, res) {
     });
 });
 
-// Route to add an article to saved list
+// Route to add a run to saved list
 app.post("/api/saved", function(req, res) {
-  var newArticle = new Article(req.body);
+  var newRun = new Run(req.body);
   console.log(req.body);
-  newArticle.save(function(err, doc) {
+  newRun.save(function(err, doc) {
     if (err) {
       console.log(err);
     }
@@ -71,10 +71,10 @@ app.post("/api/saved", function(req, res) {
   });
 });
 
-// Route to delete an article from saved list
+// Route to delete a run from saved list
 app.delete("/api/saved/", function(req, res) {
-  var url = req.param("url");
-  Article.find({ url: url }).remove().exec(function(err) {
+  var _id = req.param("_id");
+  Run.find({ _id: _id }).remove().exec(function(err) {
     if (err) {
       console.log(err);
     }
