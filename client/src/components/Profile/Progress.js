@@ -11,13 +11,13 @@ function Progress(props){
 	            </h1>
 	        </div>
 	    	<div className="panel-body">
-				<h2 className="text-center"> 96 </h2>
-				<h5 className="text-center"> MILES </h5>
+				<h2 className="text-center">96</h2>
+				<h5 className="text-center">MILES</h5>
 				<br />
+				<hr />
 				<br />
-				
-				<h4 className="text-center"> DISTANCE LEFT TO RUN THE GLOBE </h4>
-				<h3 className="text-center"> 96 MILES LEFT TO RUN CALCULATION </h3>
+				<h3 className="text-center">24805</h3>
+				<h5 className="text-center">MORE MILES TO RUN THE GLOBE</h5>
 			</div>
 	    </div>
             

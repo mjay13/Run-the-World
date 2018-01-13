@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 
 // Query Component Declaration
-class New_Run extends Component {
+class NewRun extends Component {
   // Here we set initial variables for the component to be blanks
   state = { 
     title:"",
@@ -112,4 +112,4 @@ class New_Run extends Component {
 };
 
 // Export the module back to the route
-export default New_Run;
+export default NewRun;

@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 
 // Include the Query and Results components
-import New_Run from "./Profile/New_Run";
+import NewRun from "./Profile/NewRun";
 import Progress from "./Profile/Progress";
 import Table from "./Profile/Table";
 
@@ -38,7 +38,7 @@ class Profile extends Component {
         {/* Note how we pass the setQuery function to enable Query to perform searches */}
         <div className="row">
           <div className="col-lg-7">
-            <New_Run />
+            <NewRun />
           </div>
           <div className="col-lg-1"></div>
             <div className="col-lg-4">

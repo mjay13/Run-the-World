@@ -1,20 +1,12 @@
 // Include React as a dependency
-import React, { Component } from 'react'
+import React from 'react';
 
 // Include our helpers for API calls
 import helpers from "../../utils/helpers";
 
 // Results Component Declaration
-class Table extends Component {
-  // Here we will save states for the contents we save
-  state = {
-    Title: "Black Hammock Trailhead",
-    Date: "January 8 2018",
-    Mileage: "5",
-    Time: "00:40:00",
-    Pace: ""
-  }
-
+function Table(props) {
+  
   // This code handles the sending of the search terms to the parent Search component
   handleClick = (item) => {
     console.log("CLICKED", item);
