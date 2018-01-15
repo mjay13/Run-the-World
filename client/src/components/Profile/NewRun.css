@@ -1,0 +1,13 @@
+* {
+	box-sizing: border-box;
+}
+
+.fieldName {
+	font-family: 'Roboto', sans-serif;
+	color: #1c2a48;
+}
+
+.panel {
+	border: none;
+	border-radius: 0px;
+}

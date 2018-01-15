@@ -1,23 +1,24 @@
 import React from 'react';
+import "./Progress.css";
 
 function Progress(props){
 	return (
-		<div className="panel panel-primary">
+		<div id="totalDistance" className="panel">
 	    	<div className="panel-heading">
 	        	<h1 className="panel-title text-center">
-	            	<strong>
-	                    TOTAL DISTANCE COVERED
-	                 </strong>
+	            	TOTAL DISTANCE COVERED
 	            </h1>
 	        </div>
 	    	<div className="panel-body">
-				<h2 className="text-center">96</h2>
-				<h5 className="text-center">MILES</h5>
+				<div className="img-circle">
+					<h3 id="totalMiles" className="text-center">18534</h3>
+					<h5 id="miles"className="text-center">MILES</h5>
+				</div>
 				<br />
 				<hr />
 				<br />
-				<h3 className="text-center">24805</h3>
-				<h5 className="text-center">MORE MILES TO RUN THE GLOBE</h5>
+				<h3 id="milesLeft" className="text-center">24805</h3>
+				<h5 className="text-center">MILES TO RUN THE WORLD</h5>
 			</div>
 	    </div>
             
