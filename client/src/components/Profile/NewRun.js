@@ -1,5 +1,6 @@
 // Include React as a dependency
 import React, { Component } from 'react'
+import "./NewRun.css";
 
 // Query Component Declaration
 class NewRun extends Component {
@@ -30,18 +31,10 @@ handleSubmit = (event) => {
   render() {
 
     return (
-      <div className="main-container">
-
-        <div className="row">
-          <div className="col-lg-8">
-
-
-            <div className="panel panel-primary">
+            <div className="panel">
               <div className="panel-heading">
                 <h1 className="panel-title">
-                  <strong>
-                     LOG NEW RUN
-                  </strong>
+                  LOG NEW RUN
                 </h1>
               </div>
               <div className="panel-body">
@@ -51,7 +44,7 @@ handleSubmit = (event) => {
                   <div className="form-group">
 
                     
-                    <h4 className=""><strong>Title</strong></h4>
+                    <h4 className="fieldName"><strong>Title</strong></h4>
                     <input
                       type="text"
                       placeholder="Your route"
@@ -62,7 +55,7 @@ handleSubmit = (event) => {
                       required
                     />
 
-                    <h4 className=""><strong>Date</strong></h4>
+                    <h4 className="fieldName"><strong>Date</strong></h4>
                     <input
                       type="date"
                       placeholder="mm/dd/yyyy"
@@ -73,7 +66,7 @@ handleSubmit = (event) => {
                       required
                     />
 
-                    <h4><strong>Milage</strong></h4>
+                    <h4 className="fieldName"><strong>Milage</strong></h4>
                     <input
                       type="number"
                       placeholder="How many miles did you run?"
@@ -84,7 +77,7 @@ handleSubmit = (event) => {
                       required
                     />
 
-                    <h4><strong>Time</strong></h4>
+                    <h4 className="fieldName"><strong>Time</strong></h4>
 
                     <input
                       type="number"
@@ -103,7 +96,7 @@ handleSubmit = (event) => {
                   <div className="pull-right">
                     <button
                       type="submit"
-                      className="btn btn-danger"
+                      className="btn btn-success"
                     >
                       <h4>Submit</h4>
                     </button>
@@ -112,10 +105,6 @@ handleSubmit = (event) => {
 
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
     );
   }
 };

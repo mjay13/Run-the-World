@@ -1,7 +1,36 @@
 // Include React as a dependency
 import React, { Component } from 'react';
+import "./Table.css";
+
 
 // Table Component Declaration
+
+// const Table = props => (
+//   <div className="main-container">
+//     <div className="row">
+//       <div className="col-lg-12">
+//         <div className="panel panel-primary">
+//           <div className="panel-heading">
+//             <h1 className="panel-title">
+//               <strong>
+//                 YOUR RUNS
+//               </strong>
+//             </h1>
+//           </div>
+//           <div className="panel-body">
+//             <ul className="list-group">
+//               {props.renderRuns()}
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   </div>
+// );
+
+// =====================================================================================================================
+// =====================================================================================================================
+
 
 class Table extends Component {
 
@@ -26,16 +55,11 @@ class Table extends Component {
               <p>Time: {run.totalRunTime}</p>
               <p>Date: {run.date}</p>
                 <button className="btn btn-primary" onClick={() => { this.handleClick(run)}}>Delete</button>
-              
             </h3>
-
           </li>
-
         </div>
       );
-
     });
-
   }
 
   // A helper method for rendering a container to hold all of our runs
@@ -44,12 +68,10 @@ class Table extends Component {
       <div className="main-container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="panel panel-primary">
+            <div className="panel">
               <div className="panel-heading">
                 <h1 className="panel-title">
-                  <strong>
                     YOUR RUNS
-                  </strong>
                 </h1>
               </div>
               <div className="panel-body">

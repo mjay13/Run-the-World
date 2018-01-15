@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+}
+
+.main-container {
+	background-color: #1c2a48;
+	/*max-width: 85%;*/
+	/*margin: 0px auto;*/
+
+}
+
+.panel-heading {
+	/*letter-spacing: 1.5px;*/
+	font-family: 'Roboto', sans-serif;
+}
+
+.panel-title {
+	font-size: 2.25rem;
+	color: #1c2a48;
+}
+
+.jumbotron {
+	background-image: url("../images/profilePageImage.jpg");
+/*		background: #f1f1f1;*/
+	background-repeat: no-repeat;
+	background-position: center center;
+	/*background-attachment: fixed;*/
+	/*background-size: cover;*/
+	width: 1140px;
+	height: 506px;
+}
+
+.container .jumbotron {
+	padding: 0px 0px;
+	border-radius: 0px 0px;
+}

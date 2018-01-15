@@ -12,8 +12,7 @@ class Main extends Component {
     return (
       // We can only render a single div. So we need to group everything inside of this main-container one
       <div className="main-container">
-        <div className="container">
-          {/* Navbar */}
+        {/* Navbar */}
           <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
@@ -28,7 +27,7 @@ class Main extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <Link className="navbar-brand" to="/">NYT-React</Link>
+                <Link className="navbar-brand" to="/">Run the World</Link>
               </div>
 
               <div className="collapse navbar-collapse navbar-ex1-collapse">
@@ -40,11 +39,13 @@ class Main extends Component {
               </div>
             </div>
           </nav>
+        <div className="container">
+          
 
           {/* Jumbotron */}
           <div className="jumbotron">
-            <h2 className="text-center"><strong>(ReactJS) New York Times Article Scrubber</strong></h2>
-            <h3 className="text-center">Search for and save articles of interest.</h3>
+            {/*<h2 className="text-center"><strong>Welcome To Your Run the World Profile Page</strong></h2>
+            <h3 className="text-center">Finish a run, log a run. </h3>*/}
           </div>
 
 

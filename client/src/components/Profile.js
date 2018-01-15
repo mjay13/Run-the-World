@@ -1,5 +1,6 @@
 // Include React as a dependency
 import React, { Component } from 'react'
+import "./Profile.css";
 
 // Include the components
 
@@ -29,18 +30,22 @@ class Profile extends Component {
   }
 
   deleteRun = (item) => {
-  helpers.deleteSaved(item._id)
-  .then(() => {
+    helpers.deleteSaved(item._id)
+    .then(() => {
 
-    // Get the revised log!
-    helpers.getSaved()
-    .then((runData) => {
-      this.setState({ savedRuns: runData.data });
-      console.log("Logged runs: ", runData.data);
+      // Get the revised log!
+      helpers.getSaved()
+      .then((runData) => {
+        this.setState({ savedRuns: runData.data });
+        console.log("Logged runs: ", runData.data);
+      });
+
     });
+  }
 
-  });
-}
+  // handleClick = (item) => {
+  //  this.deleteRun(item);
+  // }
 
   componentDidMount() {
     helpers.getSaved()
@@ -56,10 +61,12 @@ class Profile extends Component {
       <div className="main-container">
         {/* Note how we pass the setQuery function to enable Query to perform searches */}
         <div className="row">
-          <div className="col-lg-7">
+          <div className="col-lg-8">
             <NewRun updateRun={this.updateRun}/>
           </div>
+          {/*
           <div className="col-lg-1"></div>
+          */}
             <div className="col-lg-4">
                <Progress />
             </div>
