@@ -25,6 +25,11 @@ class Profile extends Component {
     helpers.postSaved(formData)
     .then(() => {
       console.log(formData.title+" run logged");
+      helpers.getSaved()
+      .then((runData) => {
+        this.setState({ savedRuns: runData.data });
+        console.log("Logged runs: ", runData.data);
+      });
 
     });
   }
