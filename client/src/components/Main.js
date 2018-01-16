@@ -12,7 +12,9 @@ class Main extends Component {
     return (
       // We can only render a single div. So we need to group everything inside of this main-container one
       <div className="main-container">
-        {/* Navbar */}
+
+        <div className="container">
+           {/* Navbar */}
           <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
@@ -39,7 +41,6 @@ class Main extends Component {
               </div>
             </div>
           </nav>
-        <div className="container">
           
 
           {/* Jumbotron */}
