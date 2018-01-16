@@ -25,6 +25,7 @@ class NewRun extends Component {
 handleSubmit = (event) => {
   event.preventDefault();
   this.props.updateRun(this.state);
+  this.setState({ title: "", date: "", milage: "", totalRunTime: ""});
 }
 
   // Here we render the New Run Form component

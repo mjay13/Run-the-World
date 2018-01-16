@@ -48,10 +48,6 @@ class Profile extends Component {
     });
   }
 
-  // handleClick = (item) => {
-  //  this.deleteRun(item);
-  // }
-
   componentDidMount() {
     helpers.getSaved()
     .then((runData) => {
