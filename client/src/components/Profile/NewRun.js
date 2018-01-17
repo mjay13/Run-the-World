@@ -12,7 +12,7 @@ class NewRun extends Component {
     totalRunTime: ""
   }
 
- // Whenever we detect ANY change in the textbox, we register it.
+ // Whenever we detect ANY change in the text-box, we register it.
  handleChange = (event) => {
   // Here we create syntax to capture any change in text to the query terms (pre-search).
   // See this Stack Overflow answer for more details:
