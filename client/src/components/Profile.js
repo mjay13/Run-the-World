@@ -21,6 +21,20 @@ class Profile extends Component {
     savedRuns: []
   }
 
+  // runTotal = (runData) => {
+  //   helpers.getSaved()
+  //     .then((runData) => {
+  //       // map the distances, and then add up, product is what is sent through
+  //       runData.milage.map()
+  //     })
+
+  //     // this.state.savedRuns.milage 
+  // }
+
+  // calcCirc = (runData) => {
+  //   // take the result of runTotal, and minus from 24902
+  // }
+
   updateRun = (formData) => {
     helpers.postSaved(formData)
     .then(() => {
@@ -69,7 +83,7 @@ class Profile extends Component {
           <div className="col-lg-1"></div>
           */}
             <div className="col-lg-4">
-               <Progress />
+               <Progress savedRuns={this.state.savedRuns}/>
             </div>
         </div>
         <Table savedRuns={this.state.savedRuns} deleteRun={this.deleteRun} />
