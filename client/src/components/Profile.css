@@ -23,7 +23,7 @@ body {
 	color: #1c2a48;
 }
 
-.jumbotron {
+#jumbo {
 	background-image: url("../images/profilePageImage.jpg");
 /*		background: #f1f1f1;*/
 	background-repeat: no-repeat;
@@ -34,7 +34,7 @@ body {
 	height: 506px;
 }
 
-.container .jumbotron {
+.container #jumbo {
 	padding: 0px 0px;
 	border-radius: 0px 0px;
 }
