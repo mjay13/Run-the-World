@@ -24,17 +24,19 @@ body {
 }
 
 #jumbo {
-	background-image: url("../images/profilePageImage.jpg");
-/*		background: #f1f1f1;*/
+	background: url("../images/profilePageImage.jpg");
+		/*background: #f1f1f1;*/
 	background-repeat: no-repeat;
-	background-position: center center;
+	/*background-position: center center;*/
 	/*background-attachment: fixed;*/
-	/*background-size: cover;*/
-	width: 1140px;
-	height: 506px;
+	background-size: contain;
+	max-width: 1140px;
+	height: auto;
+	padding-top: 56.25%;
 }
 
 .container #jumbo {
 	padding: 0px 0px;
 	border-radius: 0px 0px;
 }
+
