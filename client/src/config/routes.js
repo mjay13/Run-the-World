@@ -12,6 +12,7 @@ import { Route, IndexRoute, Router, browserHistory } from "react-router";
 // Reference the high-level components
 import Main from "../components/Main";
 import Profile from "../components/Profile";
+import Login from "../components/Login";
 
 // Export the Routes
 export default (
@@ -22,8 +23,11 @@ export default (
       {/* If user selects Search or Saved show the appropriate component */}
       <Route path="Profile" component={Profile} />
 
+  {/* If user selects Login or Home show the appropriate component */}
+      <Route path="Login" component={Login} />
+
       {/* If user selects any other path... we get the Home Route */}
-      <IndexRoute component={Profile} />
+      <IndexRoute component={Login} />
 
     </Route>
   </Router>

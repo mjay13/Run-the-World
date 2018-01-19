@@ -44,7 +44,7 @@ class Main extends Component {
           
 
           {/* Jumbotron */}
-          <div className="jumbotron">
+          <div id="jumbo" className="jumbotron">
             {/*<h2 className="text-center"><strong>Welcome To Your Run the World Profile Page</strong></h2>
             <h3 className="text-center">Finish a run, log a run. </h3>*/}
           </div>
