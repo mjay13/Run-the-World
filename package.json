@@ -6,7 +6,8 @@
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "mongoose": "^4.11.10"
+    "mongoose": "^4.11.10",
+    "node-mongo-seeds": "^2.3.2"
   },
   "scripts": {
     "start": "node server/server.js",
