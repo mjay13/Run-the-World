@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 // https://github.com/ReactTraining/react-router/blob/master/docs/API.md#link
 import { Link } from "react-router";
 
+
 // Create the Main component
 class Main extends Component {
 
@@ -15,7 +16,7 @@ class Main extends Component {
 
         <div className="container">
            {/* Navbar */}
-          <nav className="navbar navbar-default">
+          <nav className="navbar">
             <div className="container-fluid">
               <div className="navbar-header">
                 <button
@@ -29,7 +30,7 @@ class Main extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <Link className="navbar-brand" to="/">Run the World</Link>
+                <Link className="navbar-brand img-responsive" to="/"></Link>
               </div>
 
               <div className="collapse navbar-collapse navbar-ex1-collapse">
@@ -43,11 +44,9 @@ class Main extends Component {
           </nav>
           
 
-          {/* Jumbotron */}
-          <div id="jumbo" className="jumbotron">
-            {/*<h2 className="text-center"><strong>Welcome To Your Run the World Profile Page</strong></h2>
-            <h3 className="text-center">Finish a run, log a run. </h3>*/}
-          </div>
+          {/* Jumbotron 
+          <div id="jumbo" className="jumbotron jumbotron-fluid">
+          </div>*/}
 
 
           {/* Here we will deploy the sub components (Search or Saved */}
@@ -56,7 +55,8 @@ class Main extends Component {
 
           <footer>
             <hr />
-            <p className="pull-right">
+            <p className="text-muted credit text-center">&#169; 2018 Ryan Stangle and Megan Jacobs. All rights reserved.</p> 
+            <p className="text-muted credit text-center">
               <i className="fa fa-github" aria-hidden="true"></i>
               Proudly built using React.js
             </p>
