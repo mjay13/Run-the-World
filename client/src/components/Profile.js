@@ -60,6 +60,9 @@ class Profile extends Component {
   render() {
     return (
       <div className="main-container">
+      {/* Jumbotron */}
+          <div id="jumbo" className="jumbotron jumbotron-fluid">
+          </div>
         {/* Note how we pass the setQuery function to enable Query to perform searches */}
         <div className="row">
           <div className="col-lg-8">
