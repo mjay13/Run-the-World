@@ -8,9 +8,6 @@ var RunSchema = new Schema({
   },
   date: {
     type: Date
-    // $dateToString: {
-    //   format: "%m-%d-%Y", date: "$date"
-    // }
   },
   milage: {
     type: Number
