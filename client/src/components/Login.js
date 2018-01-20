@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
+import "./Login.css";
+
 
 
 // Query Component Declaration
@@ -44,58 +46,62 @@ class Login extends Component {
   render() {
 
     return (
-    	<div className="jumbotron">
-            <div className="panel">
-              <div className="panel-heading">
-                <h3 className="panel-title">
-                  User Login
-                </h3>
-              </div>
-              <div className="panel-body">
+      <div className="main-container">
+        {/* Jumbotron */}
+        <div id="jumbo" className="jumbotron jumbotron-fluid"></div>
+      	<div id="login" className="jumbotron">
+              <div className="panel">
+                <div className="panel-heading">
+                  <h3 className="panel-title">
+                    User Login
+                  </h3>
+                </div>
+                <div className="panel-body">
 
-                {/* Note how we associate the text-box inputs with the state values */}
-                <form onSubmit={this.handleSubmit}>
-                  <div className="form-group">
+                  {/* Note how we associate the text-box inputs with the state values */}
+                  <form onSubmit={this.handleSubmit}>
+                    <div className="form-group">
 
-                    
-                    <h4 className="fieldName"><strong>Email</strong></h4>
-                    <input
-                      type="email"
-                      placeholder="your_email@domain.com"
-                      value={this.state.username}
-                      className="form-control"
-                      id="email"
-                      onChange={this.handleChange}
                       
-                    />
+                      <h4 className="fieldName"><strong>Email</strong></h4>
+                      <input
+                        type="email"
+                        placeholder="your_email@domain.com"
+                        value={this.state.username}
+                        className="form-control"
+                        id="email"
+                        onChange={this.handleChange}
+                        
+                      />
 
-                    <h4 className="fieldName"><strong>Password</strong></h4>
-                    <input
-                      type="password"
-                      placeholder="*****"
-                      value={this.state.password}
-                      className="form-control"
-                      id="password"
-                      onChange={this.handleChange}
-                      
-                    />
+                      <h4 className="fieldName"><strong>Password</strong></h4>
+                      <input
+                        type="password"
+                        placeholder="*****"
+                        value={this.state.password}
+                        className="form-control"
+                        id="password"
+                        onChange={this.handleChange}
+                        
+                      />
 
-                  </div>
+                    </div>
 
-                  {/* Here we create the onClick event that triggers the HandleSubmit */}
-                  <div className="pull-right">
-                    <button
-                      type="submit"
-                      className="btn btn-success"
-                    >
+                    {/* Here we create the onClick event that triggers the HandleSubmit */}
+                    <div className="pull-right">
+                      <button
+                        type="submit"
+                        className="btn btn-success"
+                      >
 
-                      <h4>Submit</h4>
-                    </button>
-                  </div>
-                </form>
+                        <h4>Submit</h4>
+                      </button>
+                    </div>
+                  </form>
 
+                </div>
               </div>
-            </div>
+          </div>
         </div>
     );
   }
