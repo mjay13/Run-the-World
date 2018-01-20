@@ -28,10 +28,17 @@ app.use((req, res, next) => {
 // Serve files created by create-react-app.
 app.use(express.static("client/build"));
 
-// If deployed, use the deployed database. Otherwise use the local Run-the-World database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/Run-the-World";
+// If deployed, use the deployed database. Otherwise use the local RunTheWorld database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/RunTheWorld";
 
 mongoose.connect(MONGODB_URI);
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true
+});
 
 var db = mongoose.connection;
 
