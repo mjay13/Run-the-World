@@ -1,3 +1,43 @@
+* {
+	box-sizing: border-box;
+}
+
+.main-container {
+	background-color: none;
+	/*max-width: 85%;*/
+	/*margin: 0px auto;*/
+	min-height: 1024px;
+}
+
 #login {
 	border-radius: 0px 0px;
+	background-color: white;
+	box-shadow: none;
+}
+
+#loginJumbo {
+	background: url("../images/loginJumbotron.jpg");
+		/*background: #f1f1f1;*/
+	background-repeat: no-repeat;
+	/*background-position: center center;*/
+	/*background-attachment: fixed;*/
+	background-size: contain;
+	max-width: 1140px;
+	height: auto;
+	padding-top: 25%;
+	border-radius: 0px 0px;
+}
+
+.btn {
+	border-radius: 0px 0px;
+	margin-left: 2rem;
+	font-family: 'Roboto', sans-serif;
+}
+
+.btn-success {
+	min-width: 20rem;
+}
+
+#loginTitle {
+	font-size: 3rem;
 }

@@ -3,14 +3,13 @@
 }
 
 body {
-	background-color: black;
+	background-color: #1c2a48;
 }
 
 .main-container {
 	background-color: #1c2a48;
 	/*max-width: 85%;*/
 	/*margin: 0px auto;*/
-
 }
 
 .panel-heading {
@@ -51,3 +50,8 @@ body {
 	height: auto;
 	padding-top: 4rem;
 }
+
+.navbar {
+	margin-top: 2rem;
+}
+

@@ -18,17 +18,50 @@ class Table extends Component {
       // Each run thus represents a list group item with a known index
       return (
         <div key={index}>
-          <li className="list-group-item">
-            <h3>
-              <span>
-                <em>{run.title}</em>
-              </span>
+          <table className="table">
+            <div className="row">
+              <div className="col-md-5 col-xs-5">
+                <td>
+                    <span>
+                      <em>{run.title}</em>
+                    </span>
+                </td>
+              </div>
+              <div className="col-md-1 col-xs-1">
+                    <td>
+                    <span>
+                      <em>{run.milage}</em>
+                    </span>
+                  </td>
+              </div>
+              <div className="col-md-2 col-xs-2">
+                <td>
+                    <span>
+                      <em>{run.totalRunTime}</em>
+                    </span>
+                </td>
+              </div>
+              <div className="col-md-2 col-xs-2">
+                <td>
+                    <span>
+                      <em>{formatDate(run.date)}</em>
+                    </span>
+                </td>
+              </div>
+              <div className="col-md-2 col-xs-2">
+                <button className="btn btn-danger btn-sm" onClick={() => { this.handleClick(run)}}>Delete</button>
+              </div>
+            </div>
+            
+              {/* Note how we associate the text-box inputs with the state values
+              <h5>
               <p>Milage: {run.milage}</p>
               <p>Time: {run.totalRunTime}</p>
               <p>Date: {formatDate(run.date)}</p>
                 <button className="btn btn-primary" onClick={() => { this.handleClick(run)}}>Delete</button>
-            </h3>
-          </li>
+            </h5> */}
+          </table>
+          <hr id="tableDivider" />
         </div>
       );
     });
@@ -47,9 +80,35 @@ class Table extends Component {
                 </h1>
               </div>
               <div className="panel-body">
-                <ul className="list-group">
+                <div className="list-group">
+                  <div id="tableHeaderRow" className="row">
+                    <div className="col-md-5 col-xs-5">
+                      <td>                          
+                        ROUTE
+                      </td>
+                    </div>
+                    <div className="col-md-1 col-xs-1">
+                      <td>
+                        MILAGE
+                      </td>
+                    </div>
+                    <div className="col-md-2 col-xs-2">
+                      <td>
+                        TIME (min)
+                      </td>
+                    </div>
+                    <div className="col-md-2 col-xs-2">
+                      <td>
+                        DATE
+                      </td>
+                    </div>
+                    <div className="col-md-2 col-xs-2">
+                    </div>
+                    <hr id="headerDivider" />
+                  </div>
+                
                   {this.renderRuns()}
-                </ul>
+                </div>
               </div>
             </div>
           </div>

@@ -12,34 +12,11 @@ class Login extends Component {
     password: "",
   }
 
-	// // Whenever we detect ANY change in the textbox, we register it.
-	// handleChange = (event) => {
-	//   // Here we create syntax to capture any change in text to the query terms (pre-search).
-	//   // See this Stack Overflow answer for more details:
-	//   // http://stackoverflow.com/questions/21029999/react-js-identifying-different-inputs-with-one-onchange-handler
-	//   var newState = {};
-	//   newState[event.target.id] = event.target.value;
-	//   this.setState(newState);
-	// }
-
 	handleSubmit = (event) => {
 	  event.preventDefault();
 	  window.location.href = '/Profile';
 	  this.setState({ username: "", password: "" });
 	}
-
-	// userLogin = (formData) => {
-	//     helpers.postSaved(formData)
-	//     .then(() => {
-	//       console.log(formData.title+" run logged");
-	//       helpers.getSaved()
-	//       .then((runData) => {
-	//         this.setState({ savedRuns: runData.data });
-	//         console.log("Logged runs: ", runData.data);
-	//       });
-
-	//     });
-	// }
 
 
   // Here we render the New Run Form component
@@ -48,15 +25,17 @@ class Login extends Component {
     return (
       <div className="main-container">
         {/* Jumbotron */}
-        <div id="jumbo" className="jumbotron jumbotron-fluid"></div>
-      	<div id="login" className="jumbotron">
-              <div className="panel">
-                <div className="panel-heading">
-                  <h3 className="panel-title">
-                    User Login
-                  </h3>
-                </div>
-                <div className="panel-body">
+        <div id="loginJumbo" className="jumbotron jumbotron-fluid"></div>
+      	
+        {/* Login Jumbotron */}
+        <div id="login" className="jumbotron">
+          <div className="panel">
+            <div className="panel-heading">
+              <h2 id="loginTitle" className="panel-title">
+                User Login
+              </h2>
+            </div>
+            <div className="panel-body">
 
                   {/* Note how we associate the text-box inputs with the state values */}
                   <form onSubmit={this.handleSubmit}>
@@ -91,18 +70,24 @@ class Login extends Component {
                     <div className="pull-right">
                       <button
                         type="submit"
+                        className="btn btn-default"
+                      >
+                        <h4>Sign Up</h4>
+                      </button>
+
+                      <button
+                        type="submit"
                         className="btn btn-success"
                       >
-
-                        <h4>Submit</h4>
+                        <h4>Sign In</h4>
                       </button>
                     </div>
                   </form>
 
-                </div>
-              </div>
+            </div>
           </div>
         </div>
+      </div>
     );
   }
 };

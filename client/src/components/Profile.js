@@ -9,8 +9,6 @@ import Progress from "./Profile/Progress";
 import Table from "./Profile/Table";
 
 // Include the helpers for making API calls
-//import axios from "axios";
-
 import helpers from "../utils/helpers";
 
 
@@ -20,20 +18,6 @@ class Profile extends Component {
   state = { 
     savedRuns: []
   }
-
-  // runTotal = (runData) => {
-  //   helpers.getSaved()
-  //     .then((runData) => {
-  //       // map the distances, and then add up, product is what is sent through
-  //       runData.milage.map()
-  //     })
-
-  //     // this.state.savedRuns.milage 
-  // }
-
-  // calcCirc = (runData) => {
-  //   // take the result of runTotal, and minus from 24902
-  // }
 
   updateRun = (formData) => {
     helpers.postSaved(formData)

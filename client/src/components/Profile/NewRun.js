@@ -45,7 +45,7 @@ handleSubmit = (event) => {
                   <div className="form-group">
 
                     
-                    <h4 className="fieldName"><strong>Title</strong></h4>
+                    <h4 className="fieldName">Title</h4>
                     <input
                       type="text"
                       placeholder="Your route"
@@ -56,7 +56,7 @@ handleSubmit = (event) => {
                       required
                     />
 
-                    <h4 className="fieldName"><strong>Date</strong></h4>
+                    <h4 className="fieldName">Date</h4>
                     <input
                       type="date"
                       placeholder="mm/dd/yyyy"
@@ -67,7 +67,7 @@ handleSubmit = (event) => {
                       required
                     />
 
-                    <h4 className="fieldName"><strong>Milage</strong></h4>
+                    <h4 className="fieldName">Milage</h4>
                     <input
                       type="number"
                       placeholder="How many miles did you run?"
@@ -78,7 +78,7 @@ handleSubmit = (event) => {
                       required
                     />
 
-                    <h4 className="fieldName"><strong>Time</strong></h4>
+                    <h4 className="fieldName">Time</h4>
 
                     <input
                       type="number"
