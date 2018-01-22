@@ -14,7 +14,7 @@ class Login extends Component {
 
 	handleSubmit = (event) => {
 	  event.preventDefault();
-	  window.location.href = '/Profile';
+	  // window.location.href = '/Profile';
 	  this.setState({ username: "", password: "" });
 	}
 
@@ -79,7 +79,7 @@ class Login extends Component {
                         type="submit"
                         className="btn btn-success"
                       >
-                        <h4>Sign In</h4>
+                        <h4><Link to="/Profile">Sign In</Link></h4>
                       </button>
                     </div>
                   </form>
