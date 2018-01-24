@@ -18,16 +18,17 @@ import Login from "../components/Login";
 export default (
   // High level component is the Router component.
   <Router history={browserHistory}>
-    <Route path="/" component={Main} />
+    <Route path="/" component={Main}>
 
-    {/* If user selects Search or Saved show the appropriate component */}
-    <Route path="Profile" component={Profile} />
+      {/* If user selects Search or Saved show the appropriate component */}
+      <Route path="Profile" component={Profile} />
 
-    {/* If user selects Login or Home show the appropriate component */}
-    <Route path="Login" component={Login} />
+  {/* If user selects Login or Home show the appropriate component */}
+      <Route path="Login" component={Login} />
 
-    {/* If user selects any other path... we get the Home Route */}
-    <IndexRoute component={Login} />
+      {/* If user selects any other path... we get the Home Route */}
+      <IndexRoute component={Login} />
 
+    </Route>
   </Router>
 );
