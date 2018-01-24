@@ -21,7 +21,7 @@ export default (
     <Route path="/" component={Main}>
 
       {/* If user selects Search or Saved show the appropriate component */}
-      <Route path="Profile" component={Profile} />
+      <Route path="/Profile" component={Profile} />
 
   {/* If user selects Login or Home show the appropriate component */}
       <Route path="Login" component={Login} />
