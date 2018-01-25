@@ -23,11 +23,11 @@ export default (
       {/* If user selects Search or Saved show the appropriate component */}
       <Route path="Profile" component={Profile} />
 
-  {/* If user selects Login or Home show the appropriate component */}
+      {/* If user selects Login or Home show the appropriate component */}
       <Route path="Login" component={Login} />
 
       {/* If user selects any other path... we get the Home Route */}
-      <IndexRoute component={Login} />
+      <IndexRoute component={Main} />
 
     </Route>
   </Router>
