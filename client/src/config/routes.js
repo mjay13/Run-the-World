@@ -27,7 +27,7 @@ export default (
       <Route path="Login" component={Login} />
 
       {/* If user selects any other path... we get the Home Route */}
-      <IndexRoute component={Main} />
+      <IndexRoute component={Login} />
 
     </Route>
   </Router>
