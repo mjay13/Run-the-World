@@ -14,12 +14,7 @@ Run the World although originally designed for runners, can also be used to trac
 This was an idea that started when I was training for marathons, and became curious as to how many miles in relation to other distances I had run.  I thought it would be interesting to keep a log of how many more miles it would take to reach certain distances, inculding other cities, countries or even the world.
 
 We used the following technologies for Run the World:
-MongoDB
-Express
-React.js
-Node.js
-CSS
-Bootstrap
+MongoDB, Express, React.js, Node.js, CSS, Bootstrap
 
 -----------------------------------------
 
